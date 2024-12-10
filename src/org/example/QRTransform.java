@@ -1133,9 +1133,6 @@ public class QRTransform {
         boolean ans = percentageDif(leftCount, rightCount) < 0.2
                 && percentageDif(upCount, downCount) < 0.2
                 && percentageDif(rightCount, downCount) < 0.2;
-        if (x == 574 && y == 737) {
-            System.out.println(ans);
-        }
         return ans;
     }
 
