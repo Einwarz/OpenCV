@@ -1099,6 +1099,7 @@ public class QRTransform {
         int rightCount = 0;
         int upCount = 0;
         int downCount = 0;
+        double errorRate = 0.25;
         while (i > 0 && inputMatrix[i][y] == 0) {
             rightCount++;
             i++;
@@ -1130,9 +1131,9 @@ public class QRTransform {
         if (i < 0 || upCount == 0) {
             return false;
         }
-        boolean ans = percentageDif(leftCount, rightCount) < 0.2
-                && percentageDif(upCount, downCount) < 0.2
-                && percentageDif(rightCount, downCount) < 0.2;
+        boolean ans = percentageDif(leftCount, rightCount) < errorRate
+                && percentageDif(upCount, downCount) < errorRate
+                && percentageDif(rightCount, downCount) < errorRate;
         return ans;
     }
 
